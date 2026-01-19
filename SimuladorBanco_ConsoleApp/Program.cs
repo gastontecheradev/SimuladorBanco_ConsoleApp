@@ -6,7 +6,7 @@ namespace SimuladorBanco_ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hola");
+
         }
     }
 }
