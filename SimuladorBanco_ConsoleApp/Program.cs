@@ -10,6 +10,7 @@ namespace SimuladorBanco_ConsoleApp
 
             int opcion;
 
+            // Menu de opciones
             do
             {
                 Console.Clear();
@@ -65,6 +66,7 @@ namespace SimuladorBanco_ConsoleApp
             } while (opcion != 0);
         }
 
+        // Método para leer el número
         static int LeerEntero()
         {
             while (true)
@@ -77,6 +79,7 @@ namespace SimuladorBanco_ConsoleApp
             }
         }
 
+        // Método para leer el monto
         static decimal LeerDecimal()
         {
             while (true)
@@ -89,6 +92,7 @@ namespace SimuladorBanco_ConsoleApp
             }
         }
 
+        // Pausa
         static void Pausa()
         {
             Console.WriteLine();
@@ -104,10 +108,9 @@ namespace SimuladorBanco_ConsoleApp
         // Propiedades (datos de la cuenta)
         public string Titular { get; private set; }
         public string NumeroCuenta { get; private set; }
-
-        // Encapsulación: el saldo no se puede setear desde afuera
         public decimal Saldo { get; private set; }
 
+        // Constructor de cuenta bancaria
         public CuentaBancaria(string titular, string numeroCuenta, decimal saldoInicial)
         {
             Titular = titular;
@@ -115,6 +118,7 @@ namespace SimuladorBanco_ConsoleApp
             Saldo = saldoInicial;
         }
 
+        // Método para Depositar
         public bool Depositar(decimal monto)
         {
             if (monto <= 0) return false;
@@ -123,6 +127,7 @@ namespace SimuladorBanco_ConsoleApp
             return true;
         }
 
+        // Método para Extraer
         public bool Extraer(decimal monto)
         {
             if (monto <= 0) return false;
@@ -132,6 +137,7 @@ namespace SimuladorBanco_ConsoleApp
             return true;
         }
 
+        // Método para obtener resumen
         public string ObtenerResumen()
         {
             return $"Titular: {Titular} | Cuenta: {NumeroCuenta} | Saldo: {Saldo:C}";
